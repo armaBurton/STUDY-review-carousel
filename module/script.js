@@ -1,13 +1,13 @@
 const userArray = [
     {
         name: `Steve Zissou`,
-        occupation: `Captain of the Belafonte`,
+        occupation: `Captain of the <em>Belafonte</em>`,
         review: `No. The future, it's where you're going? Marty, this may seem a little foreward, but I was wondering if you would ask me to the Enchantment Under The Sea Dance on Saturday. 1955? You're my ma- you're my ma. C'mon.`,
         image: `url('../assets/images/zissou.png')`
     },
     {
         name: `Klaus Daimler`,
-        occupation: `First-Mate of the Belafonte`,
+        occupation: `First-Mate of the <em>Belafonte</em>`,
         review: `I don't know, Doc, I guess she felt sorry for him cause her did hit him with the car, hit me with the car. Why am I always the last one to know about these things. Shut your filthy mouth, I'm not that kind of girl. Here you go, lady.`,
         image: `url('../assets/images/Klaus.png')`
     },
@@ -25,13 +25,13 @@ const userArray = [
     },
     {
         name: `Jane Winslett-Richardson`,
-        occupation: `Journalist for the Oceanographic Explorer`,
+        occupation: `Journalist for the <u>Oceanographic Explorer</u>`,
         review: `Thank god I still got my hair. What on Earth is that thing I'm wearing? Uh? When could weathermen predict the weather, let alone the future. Well gee, I don't know. Save the clock tower, save the clock tower. Mayor Wilson is sponsoring an initiative to replace that clock. Thirty years ago, lightning struck that clock tower and the clock hasn't run since. We at the Hill Valley Preservation Society think it should be preserved exactly the way it is as part of our history and heritage.`,
         image: `url('../assets/images/jane.png')`
     },
     {
         name: `Alistair Hennessey`,
-        occupation: `Captain of the Operation Hennessay`,
+        occupation: `Captain of the <em>Operation Hennessay</em>`,
         review: `Hey, Doc? Doc. Hello, anybody home? Einstein, come here, boy. What's going on? Wha- aw, god. Aw, Jesus. Whoa, rock and roll. Yo The flux capacitor. Watch this. Not me, the car, the car. My calculations are correct, when this baby hits eighty-eight miles per hour, your gonna see some serious shit. Watch this, watch this. Ha, what did I tell you, eighty-eight miles per hour. The temporal displacement occurred at exactly 1:20 a.m. and zero seconds. Jesus, George, it's a wonder I was ever born. Hey guys, you gotta get back in there and finish the dance.`,
         image: `url('../assets/images/alistair.png')`
     }
@@ -51,6 +51,7 @@ const imageID = document.getElementById(`image-frame`);
 const rightArrow = document.getElementById(`right-arrow`);
 const leftArrow = document.getElementById(`left-arrow`);
 const surpriseMe = document.getElementById(`surprise-me`);
+const sliderWrapper = document.getElementById(`slider-wrapper`);
 
 window.onload = (e) => {
     populateReview();
@@ -58,7 +59,7 @@ window.onload = (e) => {
 
 function populateReview(){
     nameID.textContent = userName;
-    occupationID.textContent = userOccupation;
+    occupationID.innerHTML = userOccupation;
     reviewTextID.textContent = userReview;
     imageID.style.backgroundImage = userImage;
 }
@@ -72,22 +73,46 @@ function assingments(counter) {
 
 rightArrow.addEventListener(`click`, () =>{
     counter = (counter + 1) % userArray.length;
-
-    assingments(counter);
-    populateReview();
+    sliderWrapper.removeAttribute(`class`);
+    sliderWrapper.classList.add("out-left");
+    setTimeout(() => {
+        assingments(counter);
+        populateReview();
+        sliderWrapper.classList.add(`in-left`);
+        sliderWrapper.classList.remove(`out-left`);
+    }, 251);
+    sliderWrapper.classList.remove(`in-left`);
 })
 
 leftArrow.addEventListener(`click`, () =>{
+    sliderWrapper.removeAttribute(`class`);
     if (counter === 0) {
         counter = (userArray.length - 1) % userArray.length;
+        sliderWrapper.classList.add(`out-right`);
+        setTimeout(() => {
+            assingments(counter);
+            populateReview();
+            sliderWrapper.classList.add(`in-right`);
+            sliderWrapper.classList.remove(`out-right`);
+        }, 251);
+        sliderWrapper.classList.remove(`in-right`);
         assingments(counter);
         populateReview();
     } else {
         counter = (counter - 1) % userArray.length;
+        sliderWrapper.classList.add(`out-right`);
+        setTimeout(() => {
+            assingments(counter);
+            populateReview();
+            sliderWrapper.classList.add(`in-right`);
+            sliderWrapper.classList.remove(`out-right`);
+        }, 251);
+        sliderWrapper.classList.remove(`in-right`);        
+        assingments(counter);
+        populateReview();   
     }
 
-    assingments(counter);
-    populateReview();
+    
 })
 
 surpriseMe.addEventListener(`click`, () =>{
