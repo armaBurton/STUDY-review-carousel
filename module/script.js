@@ -16,6 +16,24 @@ const userArray = [
         occupation: `Pilot, Financier`,
         review: `Now, of course not, Biff, now, I wouldn't want that to happen. whoa, whoa Doc, stuck here, I can't be stuck here, I got a life in 1985. I got a girl. Maybe you were adopted. Doc, she didn't even look at him. Nah, I just don't think I'm cut out for music.`,
         image: `url('../assets/images/Kingsly.png')`
+    },
+    {
+        name: `Elenor Zissou`,
+        occupation: `Brains behind Team Zissou`,
+        review: `Hey, Doc? Doc. Hello, anybody home? Einstein, come here, boy. What's going on? Wha- aw, god. Aw, Jesus. Whoa, rock and roll. Yo Good evening, I'm Doctor Emmet Brown, I'm standing here on the parking lot of- Look at the time, you've got less than 4 minutes, please hurry. We're gonna take a little break but we'll be back in a while so, don't nobody go no where. Doc, wait. No, bastards.`,
+        image: `url('../assets/images/Elenor.png')`
+    },
+    {
+        name: `Jane Winslett-Richardson`,
+        occupation: `Journalist for the Oceanographic Explorer`,
+        review: `Thank god I still got my hair. What on Earth is that thing I'm wearing? Uh? When could weathermen predict the weather, let alone the future. Well gee, I don't know. Save the clock tower, save the clock tower. Mayor Wilson is sponsoring an initiative to replace that clock. Thirty years ago, lightning struck that clock tower and the clock hasn't run since. We at the Hill Valley Preservation Society think it should be preserved exactly the way it is as part of our history and heritage.`,
+        image: `url('../assets/images/jane.png')`
+    },
+    {
+        name: `Alistair Hennessey`,
+        occupation: `Captain of the Operation Hennessay`,
+        review: `Hey, Doc? Doc. Hello, anybody home? Einstein, come here, boy. What's going on? Wha- aw, god. Aw, Jesus. Whoa, rock and roll. Yo The flux capacitor. Watch this. Not me, the car, the car. My calculations are correct, when this baby hits eighty-eight miles per hour, your gonna see some serious shit. Watch this, watch this. Ha, what did I tell you, eighty-eight miles per hour. The temporal displacement occurred at exactly 1:20 a.m. and zero seconds. Jesus, George, it's a wonder I was ever born. Hey guys, you gotta get back in there and finish the dance.`,
+        image: `url('../assets/images/alistair.png')`
     }
 ]
 
